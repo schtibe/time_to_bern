@@ -1,0 +1,88 @@
+<html>
+    <head>
+        <script src="{{ url_for('bower.static', filename='jquery/dist/jquery.js') }}"></script>
+        <script src="{{ url_for('bower.static', filename='handlebars/handlebars.js') }}"></script>
+        <script src="{{ url_for('static', filename='time_to_bern.js') }}"></script>
+
+        <script id="table-template" type="text/x-handlebars-template">
+            {% raw %}
+            <tr>
+                <td>{{date}}</td>
+                <td>{{time}}</td>
+                <td>{{duration}}</td>
+                <td>{{products}}</td>
+                <td>{{transfers}}</td>
+            </tr>
+            {% endraw %}
+        </script>
+    </head>
+
+    <body>
+
+        <h1>Connections to Bern</h1>
+
+        <p>
+            What location interests you?
+        </p>
+
+        <form>
+            <p>
+                <input id="location">
+                <input type="submit" id="search" value="Go">
+            </p>
+        <form>
+
+        <div>
+            <h2>In the morning of a monday you have following connections:</h2>
+
+            <table id="from_table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Duration</th>
+                        <th>What</th>
+                        <th>Transfers</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+
+        </div>
+
+        <div>
+            <h2>In the evening, you can take following connections home</h2>
+            <table id="to_table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Duration</th>
+                        <th>What</th>
+                        <th>Transfers</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+
+        <div>
+            <h2>Late at night, you might get home with</h2>
+            <table id="late_table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Duration</th>
+                        <th>What</th>
+                        <th>Transfers</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+        </div>
+    </body>
+
+</html>
